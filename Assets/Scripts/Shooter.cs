@@ -12,10 +12,10 @@ public class Shooter : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(ShootingWorker());
+        StartCoroutine(MakeShot());
     }
 
-    private IEnumerator ShootingWorker()
+    private IEnumerator MakeShot()
     {
         bool isShooting = enabled;
         WaitForSeconds delay = new WaitForSeconds(_delay);
