@@ -379,7 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 30
   _delay: 0.7
-  _prefab: {fileID: 5370351866662857325, guid: c585125a1f483f84086c008e454694fd, type: 3}
+  _prefab: {fileID: 4808767674649679406, guid: c585125a1f483f84086c008e454694fd, type: 3}
   _target: {fileID: 1113815653}
 --- !u!54 &961597463
 Rigidbody:
@@ -627,7 +627,6 @@ MonoBehaviour:
   - {fileID: 439888195}
   - {fileID: 186478939}
   - {fileID: 974293883}
-  _pointsFolder: {fileID: 1150610260}
 --- !u!135 &1113815651
 SphereCollider:
   m_ObjectHideFlags: 0

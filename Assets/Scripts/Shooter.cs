@@ -7,7 +7,7 @@ public class Shooter : MonoBehaviour
 {
     [SerializeField] private float _speed = 20f;
     [SerializeField] private float _delay = 1f;
-    [SerializeField] private GameObject _prefab;
+    [SerializeField] private Rigidbody _prefab;
     [SerializeField] private Transform _target;
 
     private void Start()
@@ -17,16 +17,16 @@ public class Shooter : MonoBehaviour
 
     private IEnumerator ShootingWorker()
     {
-        bool isShooting = true;
-        var delay = new WaitForSeconds(_delay);
+        bool isShooting = enabled;
+        WaitForSeconds delay = new WaitForSeconds(_delay);
 
-        while (isShooting == true)
+        while (isShooting == enabled)
         {
-            var direction = (_target.position - transform.position).normalized;
-            var newBullet = Instantiate(_prefab);
+            Vector3 direction = (_target.position - transform.position).normalized;
+            Rigidbody newBullet = Instantiate(_prefab);
 
-            newBullet.GetComponent<Rigidbody>().transform.up = direction;
-            newBullet.GetComponent<Rigidbody>().velocity = direction * _speed;
+            newBullet.transform.up = direction;
+            newBullet.velocity = direction * _speed;
 
             yield return delay;
         }
