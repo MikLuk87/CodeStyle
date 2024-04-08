@@ -1,8 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
-
 public class Shooter : MonoBehaviour
 {
     [SerializeField] private float _speed = 20f;
