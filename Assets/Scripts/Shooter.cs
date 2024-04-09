@@ -10,21 +10,20 @@ public class Shooter : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(MakeShot());
+        StartCoroutine(Shoot());
     }
 
-    private IEnumerator MakeShot()
+    private IEnumerator Shoot()
     {
-        bool isShooting = enabled;
         WaitForSeconds delay = new WaitForSeconds(_delay);
 
-        while (isShooting == enabled)
+        while (true)
         {
             Vector3 direction = (_target.position - transform.position).normalized;
-            Rigidbody newBullet = Instantiate(_prefab);
+            Rigidbody bullet = Instantiate(_prefab);
 
-            newBullet.transform.up = direction;
-            newBullet.velocity = direction * _speed;
+            bullet.transform.up = direction;
+            bullet.velocity = direction * _speed;
 
             yield return delay;
         }

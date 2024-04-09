@@ -13,7 +13,7 @@ public class Patrolman : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, point.position, _speed * Time.deltaTime);
 
-        if ((point.position - transform.position).sqrMagnitude < 0.001)
+        if ((point.position - transform.position).magnitude < 0.001)
         {
             _pointIndex = ++_pointIndex % _movingPoints.Length; 
         }
